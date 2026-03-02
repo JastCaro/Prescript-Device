@@ -1,2 +1,2 @@
 # Prescript-Device
-Inspired in Limbus Company made for me by me.
+Inspired in Limbus Company, made for me.
