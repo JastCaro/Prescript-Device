@@ -63,6 +63,8 @@ const messages = [
 
 ];
 
+messages.forEach((msg, index) => msg.id = index + 1);
+
 const tierChances = {
     common: 50,
     uncommon: 25,
@@ -83,22 +85,37 @@ function rollTier() {
 }
 
 function pickMessage() {
-
     clickCount++;
 
+    const lastMsg = loadLastMessageId();
+    if (lastMsg) return lastMsg;
+
     const selectedTier = rollTier();
-
     const tierMessages = messages.filter(m => m.tier === selectedTier);
-
     const totalWeight = tierMessages.reduce((s, m) => s + m.weight, 0);
     let roll = Math.random() * totalWeight;
 
     for (const m of tierMessages) {
         roll -= m.weight;
         if (roll <= 0) {
+            saveLastMessageId(m);
             return m;
         }
     }
 
     return null;
+}
+
+function saveLastMessageId(message) {
+    localStorage.setItem("lastMessageId", message.id);
+}
+
+function loadLastMessageId() {
+    const lastId = parseInt(localStorage.getItem("lastMessageId"));
+    if (!lastId) return null;
+    return messages.find(m => m.id === lastId) || null;
+}
+
+function clearLastMessageId() {
+    localStorage.removeItem("lastMessageId");
 }

@@ -11,4 +11,5 @@
     transition: font-size 0.3s ease;
     word-break: break-word;
     overflow-wrap: break-word;
+    margin-top: -60px
 }

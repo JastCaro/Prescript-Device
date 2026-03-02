@@ -43,6 +43,7 @@ function showResultButtons() {
         achieved++; total++;
         updateCounters();
         saveStats();
+        clearLastMessageId();
         showResultText("CLEAR");
     };
 
@@ -51,6 +52,7 @@ function showResultButtons() {
         failed++; total++;
         updateCounters();
         saveStats();
+        clearLastMessageId();
         showResultText("FAIL");
     };
 }
