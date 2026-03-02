@@ -66,19 +66,20 @@
 @media (max-width: 600px) {
 
     #topNavbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: auto;
-        padding: 8px 10px;
+        padding: 10px 0;
         gap: 15px;
         flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
     }
 
-    .navItem {
-        font-size: 14px;
-    }
-
-    .navItem img {
-        width: 22px;
-        height: 22px;
+    body {
+        padding-top: 80px;
     }
 
 }
