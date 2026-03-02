@@ -13,20 +13,21 @@ body {
     background: #0f0f0f;
     color: #99caff; 
     font-family: "code", monospace;
+    overflow-y: hidden;
 } 
 #imageHolder {
-    position: static;
-    transform: none;
-    margin-top: 40px;
-    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
 #buttonContainer {
-    position: static;
-    transform: none;
-    margin-top: 40px;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
 }
     
 #buttonContainer button {
