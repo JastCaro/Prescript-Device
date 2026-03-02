@@ -67,3 +67,31 @@ body {
         0 0 20px rgba(255, 0, 0, 0.3);
     transform: scale(1.05);
 }
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #imageHolder,
+    #buttonContainer {
+        position: static;
+        transform: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #buttonContainer {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+}
